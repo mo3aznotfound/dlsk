@@ -1,44 +1,41 @@
 *{
     margin: 0;
     padding: 0;
-}body{
-    background-color: black;
+    box-sizing: border-box; /* This ensures padding doesn't break your widths */
+}
+body{
+    background-color: rgb(46, 46, 46);
 }
 .navbar{
     z-index: 999;
     position: sticky;
-    margin: 10px 10px 0px 10px;
-    border-bottom: solid 4px rgb(80, 80, 80);
-    background-color: aqua;
+    top: 0;
+    background-color: rgb(18, 18, 18);
     border-radius: 4px;
-    
+    border: solid 1.5px #be9aff;
+
 }
 .links{
     display: flex;
     padding: 20px;
+    flex-wrap: wrap;
     flex-direction: row;
-    justify-content: center;
     justify-content: space-evenly;
     list-style: none;
     border-radius: 5px;
-
 }
 .links a{
     text-decoration: none;
     display: inline-block;
     font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  color: black;
-  transition: 0.6s;
-  padding: 15px;
-  border-radius: 7px;
-
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+    padding: 15px;
+    border-bottom: solid transparent 4px;
 }
 .links a:hover{
-    transform: translateY(-7px);
-    background-color: rgb(44, 0, 84);
-    color: white;
-
+    color: rgb(144, 144, 144);
+    border-bottom: solid rgb(151, 113, 255) 4px;
 }
 .section{
     display: flex;
@@ -47,36 +44,62 @@
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
-    
+    padding: 20px;
 }
-.card1{
-margin-top: 30px;
+.card{
+    margin-top: 30px;
     width: 250px;
-    border-radius: 5px;
-
-    height: 300px;
-    background-color: silver;
-    border: solid aqua 3px;
+    min-height: 350px; /* Increased slightly so text isn't cramped */
+    transition: 0.2s;
+    border-radius: 9px;
+    border: solid white 2px;
+    background-color: rgb(41, 40, 40);
+    box-shadow: 0 0 15px rgba(48, 48, 48, 0.8),
+                0 0 30px rgba(248, 246, 236, 0.4);
+    display: flex;
+    flex-direction: column; 
+    overflow: hidden; 
 }
-p,
-h1,
-h2,
-h3,
-a,
-h4,
-h5{
+.card:hover{
+    transform: translateY(-8px);
+}
+p, h1, h2, h3, a, h4, h5{
     font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
 }
 .title{
     text-align: center;
-    border-bottom: solid 7px black;
-    padding: 3px;
-    background-color: black;
-    color: red;
+    border-bottom: solid 2px black;
+    padding: 10px;
+    background-color: rgb(36, 36, 36);
+    color: rgb(255, 255, 255);
 }
-.des{
-    margin-top: 30px;
+.des {
     text-align: center;
     color: white;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* This pushes the button container down */
+}
+.button {
+    margin-top: auto; 
+    padding: 10px 0;
+    width: 100%;
+}
+.button button {
+   cursor: pointer;
+   padding: 12px;
+   width: 100%;
+   border-radius: 70px;
+   background-color: rgb(0, 0, 0);
+   color: white;
+   font-family: "Montserrat", sans-serif;
+   transition: 0.6s;
+   border: solid 4px rgb(255, 217, 0);
+   outline: none;
+}
+.button button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8),
+                0 0 30px rgba(235, 200, 1, 0.943);
 }
