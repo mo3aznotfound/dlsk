@@ -1,250 +1,228 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* This ensures padding doesn't break your widths */
-}
-body {
-    position: relative;
-    min-height: 100vh;
-    margin: 0;
-    color: white; /* Text color unaffected by background brightness */
+    box-sizing: border-box;
 }
 
-body::before {
-    content: '';
-    position: fixed; /* or absolute */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('https://www.baltana.com/files/wallpapers-16/4K-Black-Background-Design-HD-Wallpapers-40664.jpg');
-    background-size: cover;
-    background-position: center;
-    filter: brightness(0.5); /* Only affects the background */
-    z-index: -1;
+html {
+    scroll-behavior: smooth;
 }
-.navbar{
+
+body {
+    background-color: rgb(7, 7, 7);
+    background-size: cover;
+}
+
+::selection {
+    color: rgb(255, 237, 237);
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(10, 10, 10);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient( rgb(1, 251, 255), rgb(151, 113, 255));
+    border-radius: 10px;
+    border: 2px solid rgb(10, 10, 10);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    box-shadow: 0 0 15px 0px rgb(255, 255, 255);
+}
+
+p, h1, h2, h3, a, h4, h5, h6 {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+}
+
+h6 {
+    font-size: 50px;
+}
+.navbar {
     z-index: 999;
     position: sticky;
     top: 0;
     background-color: rgb(18, 18, 18);
     border-radius: 4px;
-    border: solid 1.5px #be9aff;
-
+    border: solid 1.5px #06f3ff;
+    margin-bottom: 150px;
 }
-.links{
+
+.links {
     display: flex;
-    padding: 20px;
-    flex-wrap: wrap;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-evenly;
+    padding: 20px;
     list-style: none;
     border-radius: 5px;
 }
-.links a{
-    text-decoration: none;
+.links a {
     display: inline-block;
-    font-family: "Montserrat", sans-serif;
-    color: rgb(255, 255, 255);
-    transition: 0.3s;
     padding: 15px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
     border-bottom: solid transparent 4px;
-}
-.links a:hover{
-    color: rgb(144, 144, 144);
-    border-bottom: solid rgb(151, 113, 255) 4px;
-}
-.section{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    padding: 20px;
-}
-.card{
-    margin-top: 30px;
-    width: 300px;
-    min-height: 400px; /* Increased slightly so text isn't cramped */
-    transition: 0.2s;
-    border-radius: 9px;
-    border: solid rgb(10, 100, 184) 2px;
-    background-color: rgb(41, 40, 40);
-    box-shadow: 0 0 15px rgba(48, 48, 48, 0.8),
-                0 0 30px rgba(248, 246, 236, 0.4);
-    display: flex;
-    flex-direction: column; 
-    overflow: hidden; 
-}
-.card:hover{
-    transform: translateY(-8px);
-    margin-top: 30px;
-    width: 300px;
-    min-height: 400px; /* Increased slightly so text isn't cramped */
-    transition: 0.2s;
-    border-radius: 9px;
-    border: solid rgb(114, 187, 255) 2px;
-    background-color: rgb(41, 40, 40);
-    box-shadow: 0 0 15px rgba(48, 48, 48, 0.8),
-                0 0 30px rgba(248, 246, 236, 0.4);
-    display: flex;
-    flex-direction: column; 
-    overflow: hidden; 
-}
-p, h1, h2, h3, a, h4, h5{
-    font-family: "Montserrat", sans-serif;
-}
-p{
-    margin-top: 50px;
-    font-size: 20px;
-    background-color: #363636;
-    padding: 10px;
-    border-radius: 10px;
-}
-.title{
-    text-align: center;
-    border-bottom: solid 2px black;
-    padding: 10px;
-    background-color: rgb(36, 36, 36);
-    color: rgb(255, 255, 255);
-}
-.des {
-    text-align: center;
-    color: white;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* This pushes the button container down */
-}
-.button {
-    margin-top: auto; 
-    padding: 10px 0;
-    width: 75%;
-    text-align: center;
-}
-.button button:hover {
-    padding-top: 25px;
-    box-shadow: 3px 0 10px rgba(104, 207, 255, 0.8),
-                3px 0 12px rgba(131, 230, 255, 0.943);
-    border: solid 2px rgb(206, 231, 255);
-    color:rgb(156, 156, 156);
-}
-/* Add this to your existing CSS */
-.button {
-    margin-top: auto; 
-    padding: 5px 0;
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px; /* Space between price and button */
-}
-
-.price {
-    color: #ffd700; /* Gold color for price */
-    font-size: 18px;
-    font-weight: bold;
-    margin: 5px 0;
-}
-
-.price s {
-    color: #8d8d8d;
-    font-size: 14px;
-    margin-left: 5px;
-}
-
-.button button {
-    cursor: pointer;
-    padding: 12px;
-    width: 100%;
-    border-bottom-right-radius:0px;
-    border-top-right-radius: 45px;
-    border-top-left-radius: 45px;
-    border-bottom-left-radius:0px;
-    background-color: rgb(0, 0, 0);
-    color: white;
-    font-family: "Montserrat", sans-serif;
     transition: 0.3s;
-    border: solid 2px rgb(69, 165, 255);
-    outline: none;
-    margin-bottom: 0; /* Remove margin-bottom since we have gap now */
 }
-.top-half {
-    width: 100%;
-    height: 50vh; /* 50% of viewport height */
-    background-color: black;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    animation: moveUp 2s ease forwards;
+.links a:hover {
+    color: rgb(63, 63, 63);
+    border-bottom: solid rgb(0, 217, 217) 4px;
+    
 }
-
-@keyframes moveUp {
-    0% {
-        top: 0;
-    }
-    15%{
-        top: 0;
-    }
-    100% {
-        top: -100%; /* Moves completely off screen */
-    }
+.Login-signup {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 30px;
+    font-size: 30px;
 }
-.bottom-half {
-    width: 100%;
-    height: 50vh; /* 50% of viewport height */
-    background-color: black;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 9999;
-    animation: moveDown 2s ease forwards;
+.Login-signup a {
+    text-decoration: none;
 }
-
-@keyframes moveDown {
-    0% {
-        bottom: 0;
-    }
-    15%{
-        bottom: 0;
-    }
-    100% {
-        bottom: -100%; /* Moves completely off screen */
-    }
-}
-h3{
-    text-align: center;
-    margin-top: 10%;
-    font-size: 50px;
-    color: #82adff;
-}
-.description{
-    width: 100%;
-    min-height: 400px; /* Increased slightly so text isn't cramped */
-    transition: 0.2s;
-    border-radius: 10px;
-    background-color: rgb(41, 40, 40);
-    justify-content: center;
+.section1 {
+    display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.profile {
+    display: flex;
     align-items: center;
-    text-align: center;
-    background-image: url('https://cdn.pixabay.com/video/2023/03/04/153079-804706258_tiny.jpg');
-    background-size: 100%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
-h4{
-    color:#be9aff;
-    font-size: 50px;
-    text-align: center;
-    margin-top: 200px;
+.card1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+    min-height: 400px;
+    padding: 30px;
+    margin-top: 60px;
+    margin-bottom: 300px;
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0px 0px 7px 3px rgb(170, 1, 255);
+    position: relative;
+    transition: 0.5s;
 }
-s{
-    color: red;
+.card1:hover {
+    transform: scale(1.04);
+   
 }
-h5{
-    color:#bbbbbb;
-    font-size: 35px;
-    text-align: center;
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: auto;
 }
+.button, .button2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 50px;
+    font-size: 17px;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.button {
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 14%, rgb(4, 4, 4) 59%, rgb(17, 0, 255) 95%);
+}
+.button2 {
+    width: 250px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 17px;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: 0.3s;
+    /* Fixed Gradient Syntax below */
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 14%, rgb(0, 0, 0) 59%, rgb(247, 0, 255) 95%);
+}
+
+.button:hover, .button2:hover {
+    transform: translateY(-7px);
+    font-weight: bold;
+    box-shadow: 0 0 25px rgba(48, 48, 48, 0.8), 0 0 30px rgba(248, 246, 236, 0.4);
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    min-height: 700px;
+    margin-bottom: 200px;
+    background-color: rgb(52, 52, 52);
+    opacity: 0.6;
+    border-radius: 6px;
+    border: 1px solid aqua;
+    transition: 0.5s;
+}
+
+.info:hover {
+    transform: translateY(-7px);
+    
+    box-shadow: 0 0 15px rgba(192, 2, 255, 0.8), 0 0 30px rgba(182, 0, 243, 0.879);
+}
+
+.info-title {
+    padding: 30px;
+    font-size: 30px;
+}
+
+.programming-card, 
+.programming-card0, 
+.programming-card1, 
+.programming-card2 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 350px;
+    min-height: 400px;
+    border-radius: 8px;
+    transition: 0.3s;
+    margin: 10px;
+}
+
+.programming-card0 {
+    background-image: linear-gradient(90deg, rgba(255, 170, 0, 1) 0%, rgba(255, 132, 0, 1) 49%, rgb(0, 0, 0) 53%);
+}
+
+.programming-card1 {
+    flex-direction: column;
+    background-image: linear-gradient(90deg, rgb(21, 0, 255) 0%, rgb(76, 0, 255) 49%, rgb(0, 0, 0) 53%);
+}
+
+.programming-card2 {
+    flex-direction: column;
+    background-image: linear-gradient(90deg, rgb(0, 255, 204) 0%, rgb(0, 255, 242) 49%, rgb(174, 183, 0) 53%);
+}
+
+.programming-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 0 15px rgba(249, 249, 249, 0.8), 0 0 30px rgba(0, 243, 186, 0.879);
+}
+
+.html-img, .css-img {
+    width: 300px;
+    min-height: 200px;
+    object-fit: cover;
+}
+

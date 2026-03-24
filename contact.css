@@ -1,0 +1,69 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(7, 7, 7);
+}
+.links{
+    display: flex;
+    padding: 20px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style: none;
+    border-radius: 5px;
+}
+.links a{
+    text-decoration: none;
+    display: inline-block;
+    font-family: "Montserrat", sans-serif;
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+    padding: 15px;
+    border-bottom: solid transparent 4px;
+}
+.links a:hover{
+    color: rgb(144, 144, 144);
+    border-bottom: solid rgb(0, 217, 217) 4px;
+}
+.navbar{
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    background-color: rgb(18, 18, 18);
+    border-radius: 4px;
+    border: solid 1.5px #06f3ff;
+    margin-bottom: 150px;
+}
+p, h1, h2, h3, a, h4, h5{
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+}
+.contact-title{
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 10px white;
+    margin-bottom: 40px;
+}
+.contact-circles{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.contact-circles li a{
+    background-color: black;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border: solid 2px white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.6s;
+}
+.contact-circles li a:hover{
+    box-shadow: 0px 0px 30px 0px rgb(255, 0, 0);
+}
