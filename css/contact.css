@@ -44,7 +44,7 @@ p, h1, h2, h3, a, h4, h5{
 .contact-title{
     text-align: center;
     color: white;
-    text-shadow: 0px 0px 10px white;
+    text-shadow: 0px 0px 20px rgb(255, 0, 0);
     margin-bottom: 40px;
 }
 .contact-circles{

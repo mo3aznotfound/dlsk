@@ -26,7 +26,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(rgb(1, 251, 255), rgb(151, 113, 255));
+    background: linear-gradient( rgb(1, 251, 255), rgb(151, 113, 255));
     border-radius: 10px;
     border: 2px solid rgb(10, 10, 10);
 }
@@ -43,7 +43,6 @@ p, h1, h2, h3, a, h4, h5, h6 {
 h6 {
     font-size: 50px;
 }
-
 .navbar {
     z-index: 999;
     position: sticky;
@@ -63,7 +62,10 @@ h6 {
     list-style: none;
     border-radius: 5px;
 }
-
+.header-title{
+    color: whitesmoke;
+    text-shadow: 0px 0px 20px  rgb(0, 255, 200);
+}
 .links a {
     display: inline-block;
     padding: 15px;
@@ -72,38 +74,23 @@ h6 {
     border-bottom: solid transparent 4px;
     transition: 0.3s;
 }
-
 .links a:hover {
     color: rgb(63, 63, 63);
     border-bottom: solid rgb(0, 217, 217) 4px;
+    
 }
-
-.Login-signup {
-    display: flex;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    gap: 30px;
-    font-size: 30px;
-}
-
-.Login-signup a {
-    text-decoration: none;
-}
-
-.section, .section1 {
+.section1 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
-
 .profile {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
-
 .card1 {
     display: flex;
     flex-direction: column;
@@ -119,11 +106,10 @@ h6 {
     position: relative;
     transition: 0.4s;
 }
-
 .card1:hover {
     transform: scale(1.04);
+   
 }
-
 .buttons {
     display: flex;
     justify-content: center;
@@ -131,7 +117,6 @@ h6 {
     gap: 15px;
     margin-top: auto;
 }
-
 .button, .button2 {
     display: flex;
     align-items: center;
@@ -145,12 +130,22 @@ h6 {
     cursor: pointer;
     transition: 0.3s;
 }
-
 .button {
     background-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 14%, rgb(4, 4, 4) 59%, rgb(17, 0, 255) 95%);
 }
-
 .button2 {
+    width: 250px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 17px;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: 0.3s;
+    /* Fixed Gradient Syntax below */
     background-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 14%, rgb(0, 0, 0) 59%, rgb(247, 0, 255) 95%);
 }
 
@@ -178,6 +173,7 @@ h6 {
 
 .info:hover {
     transform: translateY(-7px);
+    
     box-shadow: 0 0 15px rgba(192, 2, 255, 0.8), 0 0 30px rgba(182, 0, 243, 0.879);
 }
 
@@ -199,7 +195,6 @@ h6 {
     transition: 0.3s;
     margin: 10px;
 }
-
 .programming-card0 {
     background-image: linear-gradient(90deg, rgba(255, 170, 0, 1) 0%, rgba(255, 132, 0, 1) 49%, rgb(0, 0, 0) 53%);
 }
@@ -214,10 +209,7 @@ h6 {
     background-image: linear-gradient(90deg, rgb(0, 255, 204) 0%, rgb(0, 255, 242) 49%, rgb(174, 183, 0) 53%);
 }
 
-.programming-card:hover,
-.programming-card0:hover,
-.programming-card1:hover,
-.programming-card2:hover {
+.programming-card:hover {
     transform: translateY(-15px);
     box-shadow: 0 0 15px rgba(249, 249, 249, 0.8), 0 0 30px rgba(0, 243, 186, 0.879);
 }
@@ -227,3 +219,4 @@ h6 {
     min-height: 200px;
     object-fit: cover;
 }
+
