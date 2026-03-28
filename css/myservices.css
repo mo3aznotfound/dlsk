@@ -14,7 +14,7 @@ body {
 }
 
 ::selection {
-    color: rgb(255, 237, 237);
+    color: rgb(0, 255, 213);
 }
 
 ::-webkit-scrollbar {
@@ -118,10 +118,10 @@ h6 {
 .card {
     display: flex;
     color: whitesmoke;
-    font-family: "Montserrat", sans-serif;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    border: solid 2px rgb(255, 0, 221);
     width: 350px;
     min-height: 350px;
     background-color: rgb(0, 0, 0);
@@ -129,11 +129,13 @@ h6 {
     position: relative;
     padding: 20px;
     transition: 0.3s;
+    margin: 0px 50px;
 }
 
 .card:hover {
     transform: scale(1.05);
-    box-shadow: 0px 0px 8px 0px rgb(255, 255, 255);
+    box-shadow: 0px 0px 30px 0px rgb(255, 0, 221);
+    
 }
 
 .card-des {
@@ -163,6 +165,5 @@ h6 {
 .button-1:hover {
     transition: 0.9s;
     transform: translateY(-9px);
-    font-weight: bolder;
     box-shadow: 0px 0px 20px 0px rgb(7, 251, 211);
 }

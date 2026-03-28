@@ -62,7 +62,7 @@ p, h1, h2, h3, a, h4, h5{
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 0.3s;
+    transition: 0.6s;
 }
 .contact-circles li a:hover{
     box-shadow: 0px 0px 30px 0px rgb(255, 0, 0);
