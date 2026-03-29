@@ -229,3 +229,20 @@ h6 {
     object-fit: cover;
 }
 
+
+.copyright{
+width: 100%;
+height: 250px;
+background-color: rgb(240, 215, 94);
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 9px;
+}
+.copy{
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
