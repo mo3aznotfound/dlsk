@@ -1,0 +1,6 @@
+:root{
+    --dude: blue;
+}
+.back{
+    background-color: var(--dude);
+}

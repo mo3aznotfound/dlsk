@@ -9,7 +9,9 @@ html {
 }
 
 body {
-    background-color: rgb(7, 7, 7);
+     background: #5800cc;
+background: linear-gradient(90deg, rgba(88, 0, 204, 1) 11%, rgba(0, 0, 0, 1) 69%, rgba(0, 247, 255, 1) 82%);
+
     background-size: cover;
 }
 
@@ -172,7 +174,7 @@ h6 {
 }
 .copyright{
 width: 100%;
-height: 250px;
+height: 150px;
 background-color: rgb(240, 215, 94);
 display: flex;
 justify-content: center;
@@ -181,8 +183,4 @@ border-radius: 9px;
 }
 .copy{
     color: rgb(0, 0, 0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
 }
