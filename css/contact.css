@@ -1,140 +1,188 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-body{
-      background: #5800cc;
-background: linear-gradient(90deg, rgba(88, 0, 204, 1) 11%, rgba(0, 0, 0, 1) 69%, rgba(0, 247, 255, 1) 82%);
-}
-.links{
-    display: flex;
-    padding: 20px;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-evenly;
-    list-style: none;
-    border-radius: 5px;
-}
-.links a{
-    text-decoration: none;
-    display: inline-block;
-    font-family: "Montserrat", sans-serif;
-    color: rgb(255, 255, 255);
-    transition: 0.3s;
-    padding: 15px;
-    border-bottom: solid transparent 4px;
-}
-.links a:hover{
-    color: rgb(144, 144, 144);
-    border-bottom: solid rgb(0, 217, 217) 4px;
-}
-.navbar{
-    z-index: 999;
-    position: sticky;
-    top: 0;
-    background-color: rgb(18, 18, 18);
-    border-radius: 4px;
-    border: solid 1.5px #06f3ff;
-    margin-bottom: 150px;
-}
-p, h1, h2, h3, a, h4, h5, label{
-    font-family: "Montserrat", sans-serif;
-    text-align: center;
-}
-.contact-title{
-    text-align: center;
-    color: white;
-    text-shadow: 0px 0px 20px rgb(255, 0, 0);
-    margin-bottom: 40px;
+/* --- 1. Variables & Reset --- */
+:root {
+  --primary-purple: #cc00ff;
+  --primary-cyan: #06f3ff;
+  --bg-dark: #121212;
+  --text-white: #ffffff;
+  --font-main: "Montserrat", sans-serif;
 }
 
-.contact-circles{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 150px;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: var(--font-main);
+  background: linear-gradient(90deg, #5800cc 11%, #000 69%, #00f7ff 82%);
+  color: var(--text-white);
+  min-height: 100vh;
 }
-.contact-circles li a{
-    background-color: black;
-    color: white;
-    width: 50px;
-    height: 50px;
-    border: solid 2px white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.6s;
-    
+
+/* --- 2. Navbar & Links --- */
+.navbar {
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-dark);
+  border: 1.5px solid var(--primary-cyan);
+  border-radius: 4px;
+  margin-bottom: 100px;
 }
-.contact-circles li a:hover{
-    box-shadow: 0px 0px 30px 0px rgb(255, 0, 0);
+
+.links {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px 20px;
+  list-style: none;
 }
-.copyright{
-width: 100%;
-height: 150px;
-background-color: rgb(240, 215, 94);
-display: flex;
-justify-content: center;
-align-items: center;
-border-radius: 9px;
+
+.links a {
+  text-decoration: none;
+  color: var(--text-white);
+  padding: 15px;
+  border-bottom: 4px solid transparent;
+  transition: 0.3s ease;
 }
-.copy{
-    color: rgb(0, 0, 0);
-    
+
+.links a:hover {
+  color: #909090;
+  border-bottom-color: var(--primary-cyan);
 }
-.contact-form-container{
-width: 70%;
-    height: 400px;
-    background-color: #fff;
-    border-radius: 5px;
-    opacity: 0.8;
-    transition: 0.6s;
-    display: flex;
-    border: 4px solid rgb(204, 0, 255);
-    justify-content: flex-start;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 30px;
-    text-align: center;
+
+/* --- 3. Glow Input Fields --- */
+.glow-wrapper {
+  position: relative;
+  width: 300px;
+  height: 50px;
+  margin: 0 auto;
+  padding: 2px; /* Border thickness */
+  border-radius: 8px;
+  background: #333; /* Border color when not glowing */
+  overflow: hidden;
+  transition: transform 0.4s ease;
 }
-.contact-form{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 200px;
-    transition: ease-in 0.6s;
+
+/* The Moving Glow Layer */
+.glow-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%), 
+    var(--primary-cyan) 0%, 
+    transparent 20%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
 }
-.contact-form-container:hover{
-   transform: scale(1.04);
-    box-shadow: 0px 0px 30px 0px rgb(191, 0, 255);
+
+.glow-wrapper:hover::before {
+  opacity: 1;
 }
-.Description{
-    height: 50%;
-    border: solid black 1px;
-    
+
+.glow-wrapper:hover {
+  transform: translateY(-4px);
 }
-label{
-    color: rgb(0, 0, 255)
+
+.glow-wrapper input {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-dark);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  padding: 0 15px;
+  outline: none;
 }
-.contact-form-container input:hover{
-    
-    transform: translateY(-4px);
+
+/* --- 4. Contact Form Container --- */
+.contact-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 150px;
 }
-input{
-    color: rgb(255, 255, 255);
-    transition: ease-in 0.5s;
-    background-color: black;
+
+.contact-form-container {
+  width: 70%;
+  max-width: 500px;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque for readability */
+  border: 4px solid var(--primary-purple);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.submit{
-    color: rgb(34, 255, 0);
-    font-size: 18px;
-    font-weight: bold;
+
+.contact-form-container:hover {
+  transform: scale(1.04);
+  box-shadow: 0px 0px 30px var(--primary-purple);
 }
-.contact-title1{
-     text-align: center;
-    color: white;
-    text-shadow: 0px 0px 20px rgb(221, 255, 0);
-    margin-bottom: 40px;
+
+label {
+  color: blue;
+  font-weight: bold;
+}
+
+.submit {
+  background: none;
+  border: 2px solid var(--primary-purple);
+  color: #22ff00;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.submit:hover {
+  background: var(--primary-purple);
+  color: white;
+}
+
+/* --- 5. Social & Footer --- */
+.contact-circles {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  margin-bottom: 100px;
+}
+
+.contact-circles li a {
+  background: black;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: 0.6s;
+}
+
+.contact-circles li a:hover {
+  box-shadow: 0px 0px 30px red;
+  border-color: red;
+}
+
+.copyright {
+  width: 100%;
+  height: 100px;
+  background-color: #f0d75e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9px 9px 0 0;
+  color: black;
 }

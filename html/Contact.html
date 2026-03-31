@@ -41,9 +41,15 @@
             <form class="contact-form" action="" method="post">
                 <div class="contact-form-container">
                     <label  for="Email">Email</label>
-                    <input placeholder="Please enter your Email!" required type="email" name="" id="Email">
+                    <div class="glow-wrapper">
+                        <input placeholder="Please enter your Email!" required type="email" name="" id="Email">
+                    </div>
+                    
                     <label for="Subject">Subject</label>
-                    <input placeholder="Please enter the Subject" required id="Subject" type="text">
+                    <div class="glow-wrapper">
+                        <input placeholder="Please enter the Subject" required id="Subject" type="text">
+                    </div>
+                    
                     <label for="Description">Description</label>
                     <textarea  rows="20" cols="40" name="" id="Description"></textarea>
 
@@ -57,6 +63,18 @@
             <h2 class="copy">&copy; All rights reserved...</h2>
         </div>
     </footer>
+
+    <script>
+        document.querySelectorAll('.glow-wrapper').forEach(wrapper => {
+  wrapper.addEventListener('mousemove', (e) => {
+    const rect = wrapper.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    wrapper.style.setProperty('--x', `${x}px`);
+    wrapper.style.setProperty('--y', `${y}px`);
+  });
+});
+    </script>
 </body>
-</body>
+
 </html>
