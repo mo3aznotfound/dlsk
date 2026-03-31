@@ -96,6 +96,7 @@ width: 70%;
     border: 4px solid rgb(204, 0, 255);
     justify-content: flex-start;
     flex-direction: column;
+    flex-wrap: wrap;
     gap: 30px;
     text-align: center;
 }
@@ -118,12 +119,13 @@ label{
     color: rgb(0, 0, 255)
 }
 .contact-form-container input:hover{
-    background-color: black;
+    
     transform: translateY(-4px);
 }
 input{
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     transition: ease-in 0.5s;
+    background-color: black;
 }
 .submit{
     color: rgb(34, 255, 0);
